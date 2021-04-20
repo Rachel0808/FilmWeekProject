@@ -3,12 +3,11 @@ import "./App.css";
 import Movie from "./components/Movie";
 import React, { useState, useEffect } from "react";
 
-const FEATURED_API =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0651c14b1b7ae90e44b997c02eeb80db&page=1";
+const api_key = process.env.REACT_APP_API_KEY;
+const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`;
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
-const SEARCH_API =
-  "https://api.themoviedb.org/3/search/movie?&api_key=0651c14b1b7ae90e44b997c02eeb80db&query=";
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?&api_key=${api_key}&query=`;
 
 function App() {
   const [movies, setMovies] = useState([]);
